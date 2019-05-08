@@ -1,6 +1,6 @@
 # -*- indent-tabs-mode:t; -*-
 
-NUM_HASHES=100
+NUM_HASHES=10
 #ROCKYOU=rockyou3m.txt
 #ROCKYOU=rockyou100.txt
 #ROCKYOU=rockyou1000.txt
@@ -43,4 +43,4 @@ test: crack hashes.txt
 	./crack hashes.txt $(ROCKYOU)
 
 check: crack hashes.txt
-	valgrind ./crack hashes.txt $(ROCKYOU)
+	valgrind --leak-check=full ./crack hashes.txt $(ROCKYOU)
